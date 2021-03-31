@@ -3,7 +3,7 @@ import { context } from "@actions/github";
 import { EventPayloads } from "@octokit/webhooks";
 
 import { backport } from "./backport";
-import { getLabelsToAdd } from "./get-labels-to-add";
+import { getTokensFromCommaString } from "./get-tokens-from-comma-string";
 
 const run = async () => {
   try {
@@ -11,9 +11,9 @@ const run = async () => {
     const titleTemplate = getInput("title_template");
     debug(JSON.stringify(context, undefined, 2));
     const labelsInput = getInput("add_labels");
-    const labelsToAdd = getLabelsToAdd(labelsInput);
+    const labelsToAdd = getTokensFromCommaString(labelsInput);
     const branchesInput = getInput("branches");
-    const branches = getLabelsToAdd(branchesInput);
+    const branches = getTokensFromCommaString(branchesInput);
     await backport({
       branches,
       labelsToAdd,

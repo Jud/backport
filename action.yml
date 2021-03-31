@@ -6,7 +6,7 @@ inputs:
     description: Comma separated list of labels to add to the backport PR.
     required: false
   branches:
-    description: Comma separated list of branches to open backport PR against.
+    description: Comma separated list of branches to open backport PRs against.
     required: false
     default: develop,staging
   github_token:
