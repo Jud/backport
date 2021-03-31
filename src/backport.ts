@@ -46,7 +46,7 @@ const getBackportBaseToHead = ({
 
     if (matches !== null) {
       branches.forEach((base) => {
-        baseToHead[base] = `backport-${pullRequestNumber}-to-${base}`;;
+        baseToHead[base] = `backport-${pullRequestNumber}-to-${base}`;
       });
     }
   });
