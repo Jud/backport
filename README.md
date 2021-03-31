@@ -7,5 +7,5 @@ It thus integrates well with [Autosquash](https://github.com/marketplace/actions
 
 1.  :electric_plug: Add this [.github/workflows/hotfix.yml](.github/workflows/hotfix.yml) to your repository.
 2.  :speech_balloon: Change the `branches` key to the branches you want hotfixes backported to.
-3.  :sparkles: That's it! When the pull request gets merged, it will be backported to the `develop` and `staging` branches by default.
+3.  :sparkles: That's it! When the pull request gets merged, it will be backported to the specified branches.
     If the pull request cannot be backported, a comment explaining why will automatically be posted.
