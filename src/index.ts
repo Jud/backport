@@ -12,7 +12,10 @@ const run = async () => {
     debug(JSON.stringify(context, undefined, 2));
     const labelsInput = getInput("add_labels");
     const labelsToAdd = getLabelsToAdd(labelsInput);
+    const branchesInput = getInput("branches");
+    const branches = getLabelsToAdd(branchesInput);
     await backport({
+      branches,
       labelsToAdd,
       payload: context.payload as EventPayloads.WebhookPayloadPullRequest,
       titleTemplate,
